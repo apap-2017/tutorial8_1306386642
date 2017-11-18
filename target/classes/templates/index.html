@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Index</title>
+</head>
+<body>
+	<h2>Welcome</h2>
+	<a href="/login">Login</a><br/>
+	<a href="/logout">Logout</a><br/>
+	<a th:if="${#httpServletRequest.isUserInRole('ADMIN')}" href="/course/viewall"> View All Course </a><br/>
+	<a th:if="${#httpServletRequest.isUserInRole('USER')} or ${#httpServletRequest.isUserInRole('ADMIN')}" href="/student/viewall"> View All Student </a><br/>
+</body>
+</html>
